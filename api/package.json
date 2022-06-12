@@ -21,6 +21,9 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@mikro-orm/core": "^5.2.0",
+    "@mikro-orm/nestjs": "^5.0.2",
+    "@mikro-orm/postgresql": "^5.2.0",
     "@nestjs/apollo": "^10.0.14",
     "@nestjs/common": "^8.0.0",
     "@nestjs/core": "^8.0.0",
@@ -28,11 +31,16 @@
     "@nestjs/platform-express": "^8.0.0",
     "apollo-server-express": "^3.8.2",
     "graphql": "^16.5.0",
+    "knex": "^2.1.0",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0"
   },
   "devDependencies": {
+    "@mikro-orm/cli": "^5.2.0",
+    "@mikro-orm/migrations": "^5.2.0",
     "@nestjs/cli": "^8.0.0",
     "@nestjs/schematics": "^8.0.0",
     "@nestjs/testing": "^8.0.0",
