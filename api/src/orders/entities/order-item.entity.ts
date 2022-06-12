@@ -3,10 +3,14 @@ import { ColorEntity } from '@/products/entities/color.entity';
 import { ProductEntity } from '@/products/entities/product.entity';
 import { SizeEntity } from '@/products/entities/size.entity';
 import { Entity, ManyToOne, OneToOne, Property } from '@mikro-orm/core';
+import { OrderEntity } from './order.entity';
 
-@Entity({ tableName: 'stocks' })
-export class StockEntity extends BaseEntity {
-  @ManyToOne(() => ProductEntity)
+@Entity({ tableName: 'order_items' })
+export class OrderItemEntity extends BaseEntity {
+  @ManyToOne(() => OrderEntity)
+  order!: OrderEntity;
+
+  @OneToOne(() => ProductEntity)
   product!: ProductEntity;
 
   @OneToOne(() => ColorEntity)
@@ -16,9 +20,9 @@ export class StockEntity extends BaseEntity {
   size!: SizeEntity;
 
   @Property()
-  stock!: number;
+  quantity!: number;
 
-  constructor(partial: Partial<StockEntity>) {
+  constructor(partial: Partial<OrderItemEntity>) {
     super();
     Object.assign(partial);
   }
